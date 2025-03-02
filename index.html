@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8086 Microprocessor Topics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>8086 Microprocessor Topics</h1>
+    <ol>
+        <li><a href="internal-architecture.html">Internal Architecture of 8086</a></li>
+        <li><a href="io-interfacing.html">I/O Interfacing in Microprocessor</a></li>
+        <li><a href="memory-banking.html">Memory Banking in 8086</a></li>
+        <li><a href="other-topics.html">Other Topics (Bus, Port, Interfacing)</a></li>
+    </ol>
+
+    <h2>Potential Exam Questions</h2>
+    <p>Here are some potential questions based on the topics covered in the PDF. Use these to test your understanding:</p>
+    <ol>
+        <li>
+            <strong>Question:</strong> What are the main functions of the <span class="term" onclick="showPopup('biu')">Bus Interface Unit (BIU)</span> in the 8086 microprocessor?
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="internal-architecture.html">Internal Architecture of 8086</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> Explain the concept of <span class="term" onclick="showPopup('pipelining')">pipelining</span> in the 8086 microprocessor.
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="internal-architecture.html">Internal Architecture of 8086</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> What is the role of the <span class="term" onclick="showPopup('execution-unit')">Execution Unit (EU)</span> in the 8086 microprocessor?
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="internal-architecture.html">Internal Architecture of 8086</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> Describe the three methods of <span class="term" onclick="showPopup('io-interfacing')">I/O interfacing</span> in the 8086 microprocessor.
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="io-interfacing.html">I/O Interfacing in Microprocessor</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> What is <span class="term" onclick="showPopup('memory-banking')">memory banking</span>, and why is it used in the 8086 microprocessor?
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="memory-banking.html">Memory Banking in 8086</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> Explain the difference between <span class="term" onclick="showPopup('memory-mapped-io')">memory-mapped I/O</span> and <span class="term" onclick="showPopup('isolated-io')">isolated I/O</span>.
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="other-topics.html">Other Topics</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> What is a <span class="term" onclick="showPopup('bus')">bus</span>, and what are the types of buses in the 8086 microprocessor?
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="other-topics.html">Other Topics</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> What is a <span class="term" onclick="showPopup('port')">port</span>, and how is it used in the 8086 microprocessor?
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="other-topics.html">Other Topics</a> page.
+        </li>
+        <li>
+            <strong>Question:</strong> What is <span class="term" onclick="showPopup('interfacing')">interfacing</span>, and why is it important in microprocessor systems?
+            <br>
+            <strong>Hint:</strong> Refer to the <a href="other-topics.html">Other Topics</a> page.
+        </li>
+    </ol>
+
+    <!-- Popups for terms -->
+    <div id="biu-popup" class="popup">
+        <h2>Bus Interface Unit (BIU)</h2>
+        <p>The BIU handles all transfers of data and addresses on the buses for the execution unit. It sends out addresses, fetches instructions from memory, reads data from ports and memory, and writes data to ports and memory.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="pipelining-popup" class="popup">
+        <h2>Pipelining</h2>
+        <p>Pipelining is a technique where multiple instructions are overlapped in execution. The BIU uses pipelining to pre-fetch instructions and store them in the instruction queue for faster execution.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="execution-unit-popup" class="popup">
+        <h2>Execution Unit (EU)</h2>
+        <p>The Execution Unit (EU) is responsible for decoding and executing instructions. It processes data provided by the BIU and stores results in internal registers like AX, BX, CX, and DX.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="io-interfacing-popup" class="popup">
+        <h2>I/O Interfacing</h2>
+        <p>I/O interfacing involves transferring data between input-output devices and the microprocessor. The three methods are program-controlled I/O, interrupt-driven I/O, and hardware-controlled I/O (DMA).</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="memory-banking-popup" class="popup">
+        <h2>Memory Banking</h2>
+        <p>Memory banking is a technique used in the 8086 microprocessor to access two consecutive memory locations in one cycle. It divides memory into even and odd banks to transfer 16 bits of data simultaneously.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="memory-mapped-io-popup" class="popup">
+        <h2>Memory-Mapped I/O</h2>
+        <p>Memory-mapped I/O treats I/O devices as if they were memory locations. The same address space is used for both memory and I/O devices.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="isolated-io-popup" class="popup">
+        <h2>Isolated I/O</h2>
+        <p>Isolated I/O uses separate address spaces for memory and I/O devices. Special instructions (IN and OUT) are used to access I/O devices.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="bus-popup" class="popup">
+        <h2>Bus</h2>
+        <p>A bus is a communication system that transfers data between components inside a computer or between computers. The 8086 microprocessor uses three types of buses: address bus, data bus, and control bus.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="port-popup" class="popup">
+        <h2>Port</h2>
+        <p>A port is a connection point or interface between a computer and an external or internal device. It can be used to connect devices like printers, modems, and hard drives.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="interfacing-popup" class="popup">
+        <h2>Interfacing</h2>
+        <p>Interfacing is the process of connecting the 8086 microprocessor with peripherals like memory and I/O devices to perform operations. It includes memory interfacing and I/O interfacing.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Overlay for popups -->
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+        function showPopup(term) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById(`${term}-popup`).style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>

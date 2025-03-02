@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Banking in 8086</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Memory Banking in 8086</h1>
+    <p>
+        The 8086 processor provides a 16-bit data bus. It is capable of transferring 16 bits in one cycle, but each memory location is only of a byte (8 bits). Therefore, we need two cycles to access 16 bits (8 bits each) from two different memory locations.
+    </p>
+    <p>
+        The solution to this problem is <span class="term" onclick="showPopup('memory-banking')">Memory Banking</span>.
+    </p>
+    <h2>Even Bank (Lower Bank)</h2>
+    <p>
+        Contains even addresses and stores the lower byte of data.
+    </p>
+    <h2>Odd Bank (Higher Bank)</h2>
+    <p>
+        Contains odd addresses and stores the higher byte of data.
+    </p>
+
+    <!-- Popups for terms -->
+    <div id="memory-banking-popup" class="popup">
+        <h2>Memory Banking</h2>
+        <p>Memory banking is a technique used in the 8086 microprocessor to access two consecutive memory locations in one cycle. It divides memory into even and odd banks to transfer 16 bits of data simultaneously.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Overlay for popups -->
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+        function showPopup(term) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById(`${term}-popup`).style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
+        }
+    </script>
+
+    <a href="index.html">Back to Topics</a>
+</body>
+</html>

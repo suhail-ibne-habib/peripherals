@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Topics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Other Topics</h1>
+    <h2>Bus</h2>
+    <p>
+        A <span class="term" onclick="showPopup('bus')">bus</span> is a communication system that transfers data between components inside a computer or between computers.
+    </p>
+    <h2>Port</h2>
+    <p>
+        A <span class="term" onclick="showPopup('port')">port</span> is a connection point or interface between a computer and an external or internal device.
+    </p>
+    <h2>Interfacing</h2>
+    <p>
+        <span class="term" onclick="showPopup('interfacing')">Interfacing</span> is the process of connecting the microprocessor with peripherals like memory and I/O devices.
+    </p>
+
+    <!-- Popups for terms -->
+    <div id="bus-popup" class="popup">
+        <h2>Bus</h2>
+        <p>A bus is a communication system that transfers data between components inside a computer or between computers. The 8086 microprocessor uses address, data, and control buses.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="port-popup" class="popup">
+        <h2>Port</h2>
+        <p>A port is a connection point or interface between a computer and an external or internal device. It can be used to connect devices like printers, modems, and hard drives.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="interfacing-popup" class="popup">
+        <h2>Interfacing</h2>
+        <p>Interfacing is the process of connecting the 8086 microprocessor with peripherals like memory and I/O devices to perform operations. It includes memory interfacing and I/O interfacing.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Overlay for popups -->
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+        function showPopup(term) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById(`${term}-popup`).style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
+        }
+    </script>
+
+    <a href="index.html">Back to Topics</a>
+</body>
+</html>

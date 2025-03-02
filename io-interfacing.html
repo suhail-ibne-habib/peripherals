@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I/O Interfacing in Microprocessor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>I/O Interfacing in Microprocessor</h1>
+    <p>
+        Data is transferred from <span class="term" onclick="showPopup('input-device')">input-output devices</span> to the microprocessor. There are three different ways in which data transfer can take place:
+    </p>
+    <h2>1. Program Controlled I/O</h2>
+    <p>
+        In <span class="term" onclick="showPopup('program-io')">program controlled I/O</span>, the transfer of data is completely under the control of the microprocessor program.
+    </p>
+    <h2>2. Interrupt Program Controlled I/O</h2>
+    <p>
+        In <span class="term" onclick="showPopup('interrupt-io')">interrupt program-controlled I/O</span>, when a peripheral is ready to transfer data, it sends an interrupt signal to the microprocessor.
+    </p>
+    <h2>3. Hardware Controlled I/O</h2>
+    <p>
+        In <span class="term" onclick="showPopup('hardware-io')">hardware controlled I/O</span>, the hardware controls the data transfer, commonly referred to as <span class="term" onclick="showPopup('dma')">Direct Memory Access (DMA)</span>.
+    </p>
+
+    <!-- Popups for terms -->
+    <div id="input-device-popup" class="popup">
+        <h2>Input-Output Devices</h2>
+        <p>Devices like keyboards, mice, printers, and modems that interact with the microprocessor.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="program-io-popup" class="popup">
+        <h2>Program Controlled I/O</h2>
+        <p>Data transfer is controlled by the microprocessor program using IN and OUT instructions.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="interrupt-io-popup" class="popup">
+        <h2>Interrupt Program Controlled I/O</h2>
+        <p>The peripheral sends an interrupt signal to the microprocessor, which then executes an interrupt service routine.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="hardware-io-popup" class="popup">
+        <h2>Hardware Controlled I/O</h2>
+        <p>Direct Memory Access (DMA) allows high-speed data transfer without microprocessor intervention.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div id="dma-popup" class="popup">
+        <h2>Direct Memory Access (DMA)</h2>
+        <p>A method of transferring data between memory and peripherals without involving the CPU.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Overlay for popups -->
+    <div id="overlay" class="overlay"></div>
+
+    <script>
+        function showPopup(term) {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById(`${term}-popup`).style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
+        }
+    </script>
+
+    <a href="index.html">Back to Topics</a>
+</body>
+</html>
